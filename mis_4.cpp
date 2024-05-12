@@ -43,6 +43,30 @@ void Employee::SetSalary(unsigned int set_salary){
 }
 
 int main(){
-    //
+    //Создаем двух сотрудников (объекта)
+    Employee Person_1;
+
+    Person_1.SetAge(22);
+    Person_1.SetyearsOfService(2);
+    Person_1.SetSalary(12000);
+
+    Employee Person_2;
+
+    Person_2.SetAge(31);
+    Person_2.SetyearsOfService(8);
+    Person_2.SetSalary(15500);
+
+    cout << "First employee:" << endl;
+    cout << "Age: " << Person_1.GetAge() << " years" << endl;
+    cout << "Setyears Of servic: " << Person_1.GetyearsOfService() << " years" << endl;
+    cout << "Salary: " << Person_1.GetSalary() << " dolars" << endl;
+
+    cout << endl;
+
+    cout << "Second employee:" << endl;
+    cout << "Age: " << Person_2.GetAge() << " years" << endl;
+    cout << "Setyears Of servic: " << Person_2.GetyearsOfService() << " years" << endl;
+    cout << "Salary: " << Person_2.GetSalary() << " dolars" << endl;
+
     return 0;
 }
