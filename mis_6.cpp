@@ -4,6 +4,10 @@ using namespace std;
 class Employee{
     //методы доступа
 public:
+    //конструктор объявление
+    Employee(int init_age, int init_yearsOfService, int init_Salary);
+    ~Employee();
+
     unsigned int GetAge();
     void SetAge(unsigned int);
     unsigned int GetyearsOfService();
@@ -12,14 +16,21 @@ public:
     void SetSalary(unsigned int);
     
     unsigned int GetSalaryOfyear(); //метод получения значения годовой зарплаты
-    void SetSalaryOfyear(unsigned int); //метод назначения значения годовой зарплаты
 
 //private:
     unsigned int age;
     unsigned int yearsOfService;
     unsigned int Salary;
-    unsigned int SalaryOfyear; //новая переменная для годовой зарплаты
 };
+
+//конструктор 
+Employee::Employee(int init_age, int init_yearsOfService, int init_Salary){
+    age = init_age;
+    yearsOfService = init_yearsOfService; 
+    Salary = init_Salary;
+}
+
+Employee::~Employee(){}
 
 //инициализация функций класса
 unsigned int Employee::GetAge(){
@@ -48,7 +59,7 @@ void Employee::SetSalary(unsigned int set_salary){
 
 //инициализация 
 unsigned int Employee::GetSalaryOfyear(){
-    return SalaryOfyear * 12;
+    return Salary * 12;
 }
 /*этот метод не нужен получаеться, если мы можем задать значение на прямую
 void Employee::SetSalaryOfyear(unsigned int m_SalaryOfyear){
@@ -56,9 +67,9 @@ void Employee::SetSalaryOfyear(unsigned int m_SalaryOfyear){
 }*/
 
 int main(){
-    Employee Person_1;
+    Employee Person_1(22,2,1000);
     //пример
-    Person_1.SalaryOfyear = 8000;
+    Person_1.Salary = 8000;
 
     cout << "An employee receives: " << Person_1.GetSalaryOfyear() << " per year";
 
